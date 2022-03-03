@@ -34,40 +34,40 @@ SIMCLR and DINO models were trained for 100 epochs using their vanilla training 
   <tr>
     <th>Arch</th>
     <th>SSL Method</th>
+    <th>Dataset</th>
     <th>Epochs</th>
     <th>Dim</th>
-    <th>CRC100K-R</th>
-    <th>CRC100K-N</th>
+    <th>K-NN</th>
     <th>Download</th>
   </tr>
   
   <tr>
     <td>ResNet-50 (Trunc)</td>
-    <td>ImageNet Transfer</td>
+    <td>Transfer</td>
+    <td>ImageNet</td>
     <td>N/A</td>
     <td>1024</td>
     <td>0.935</td>
-    <td>0.983</td>
     <td>N/A</td>
   </tr>
   
   <tr>
     <td>ResNet-50</td>
-    <td><a href="https://github.com/PyTorchLightning/lightning-bolts/blob/master/pl_bolts/models/self_supervised/simclr/simclr_module.py">SimCLR</a></td>
+    <td><a href="https://github.com/google-research/simclr">SimCLR</a></td>
+    <td>TCGA-BRCA</td>
     <td>100</td>
     <td>2048</td>
     <td>0.938</td>
-    <td>0.981</td>
     <td><a href="https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/ckpts/resnet50_tcga_brca_simclr.pt">Backbone</a></td>
   </tr>
   
   <tr>
     <td>ViT-S/16</td>
     <td><a href="https://github.com/facebookresearch/dino">DINO</a></td>
+    <td>TCGA-BRCA</td>
     <td>100</td>
     <td>384</td>
     <td>0.941</td>
-    <td>0.987</td>
     <td><a href="https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/ckpts/vits_tcga_brca_dino.pt">Backbone</a></td>
   </tr>
 </table>
