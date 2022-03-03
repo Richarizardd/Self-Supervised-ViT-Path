@@ -96,7 +96,7 @@ Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be trick
 
 
 ## License & Usage 
-If you find our work useful in your research, please consider citing our paper at:
+This work is still under submission in a formal proceeding. Still, if you found  our work useful in your research, please consider citing our paper at:
 ```bash
 @article{chen2022self,
   title={Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology},
