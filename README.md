@@ -3,7 +3,8 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 <details>
 <summary>
   <b>Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology</b>, LMRL Workshop, NeurIPS 2021.
-  <a href="https://arxiv.org/abs/2203.00585" target="blank">[PDF]</a>
+  <a href="https://www.lmrl.org" target="blank">[Workshop HTML]</a>
+  <a href="https://arxiv.org/abs/2203.00585" target="blank">[arXiv]</a>
   <br><em>Richard. J. Chen, Rahul G. Krishnan</em></br>
 </summary>
 
