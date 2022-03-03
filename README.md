@@ -22,6 +22,7 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 </div>
 
 ## Pretrained Models
+SIMCLR and DINO models were trained for 100 epochs using their vanilla training recipes in their respective papers. These models were trained on 2,055,742 patches (```256 x 256``` resolution at ```20X``` magnification) extracted from diagnostic slides in the TCGA-BRCA dataset.
 <table>
   <tr>
     <th>Arch</th>
@@ -63,3 +64,19 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
     <td><a href="https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/ckpts/vits_tcga_brca_dino.pt">Backbone</a></td>
   </tr>
 </table>
+
+### Data Download + Data Preprocessing
+- CRC-100K: Train and test data can be downloaded as is via this [Zenodo link](https://zenodo.org/record/1214456).
+- BreastPathQ: Train and test data can be downloaded from the [official Grand Challenge link](https://breastpathq.grand-challenge.org).
+- TCGA-BRCA: To download diagnostic WSIs (formatted as .svs files) and associated clinical metadata, please refer to the [NIH Genomic Data Commons Data Portal](https://portal.gdc.cancer.gov/) and the [cBioPortal](https://www.cbioportal.org/). WSIs for each cancer type can be downloaded using the [GDC Data Transfer Tool](https://docs.gdc.cancer.gov/Data_Transfer_Tool/Users_Guide/Data_Download_and_Upload/).
+
+For CRC-100K and BreastPathQ, pre-extracted embeddings are already available and processed in [./embeddings_patch_library](https://github.com/Richarizardd/Self-Supervised-ViT-Path/tree/master/embeddings_patch_library). See [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction_utils.py) on how these patch datasets were processed.
+
+## Evaluation: Patch-Level Classification on CRC-100K, BreastPathQ, BCSS
+Run the notebook [patch_extraction.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction.ipynb), followed by [patch_evaluation.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_evaluation.ipynb).
+
+## Evaluation: Slide-Level Classification on TCGA-BRCA (IDC versus ILC)
+Install the [CLAM Package](https://github.com/mahmoodlab/CLAM), followed by using the [10-fold cross-validation splits](https://github.com/Richarizardd/Self-Supervised-ViT-Path/tree/master/slide_evaluation/splits/10foldcv_subtype/tcga_brca) made available in ```./slide_evaluation/10foldcv_subtype/tcga_brca```.
+
+## Visualization: Creating UMAPs
+Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be tricky to install if you have incompatible dependencies), followed by using the following code snippet in [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/aab950a98118f45536a44ee599720ba4ae691524/patch_extraction_utils.py#L111).
