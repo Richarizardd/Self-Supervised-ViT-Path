@@ -27,9 +27,9 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
     <th>Arch</th>
     <th>SSL Method</th>
     <th>Epochs</th>
-    <th>Embed Dim</th>
-    <th>CRC-100K w/o SN</th>
-    <th>CRC-100K w/ SN</th>
+    <th>Dim</th>
+    <th>CRC100K-R</th>
+    <th>CRC100K-N</th>
     <th>Download</th>
   </tr>
   
