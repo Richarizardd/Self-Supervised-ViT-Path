@@ -21,6 +21,12 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
   <img width="80%" alt="DINO illustration" src=".github/Pathology_DINO.jpg">
 </div>
 
+## Pre-Reqs
+We use [Git LFS](https://git-lfs.github.com) to version-control large files in this repository (e.g. - images, embeddings, checkpoints). After installing, to pull these large files, please run:
+```bash
+git lfs pull
+```
+
 ## Pretrained Models
 SIMCLR and DINO models were trained for 100 epochs using their vanilla training recipes in their respective papers. These models were trained on 2,055,742 patches (```256 x 256``` resolution at ```20X``` magnification) extracted from diagnostic slides in the TCGA-BRCA dataset.
 <table>
@@ -84,3 +90,20 @@ tensorboard --logdir ./slide_evaluation/results/
 
 ## Visualization: Creating UMAPs
 Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be tricky to install if you have incompatible dependencies), followed by using the following code snippet in [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/aab950a98118f45536a44ee599720ba4ae691524/patch_extraction_utils.py#L111).
+
+## Visualization: Attention Maps
+(Coming Soon)
+
+
+## License & Usage 
+If you find our work useful in your research, please consider citing our paper at:
+```bash
+@article{chen2022self,
+  title={Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology},
+  author={Chen, Richard J and Krishnan, Rahul G},
+  journal={Learning Meaningful Representations of Life, NeurIPS 2021},
+  year={2021}
+}
+```
+
+© This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
