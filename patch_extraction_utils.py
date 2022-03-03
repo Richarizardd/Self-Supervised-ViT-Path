@@ -1,9 +1,10 @@
-### Base Dependencies
+### Dependencies
+# Base Dependencies
 import os
 import pickle
 import sys
 
-### LinAlg / Stats / Plotting Dependencies
+# LinAlg / Stats / Plotting Dependencies
 import h5py
 import matplotlib.pyplot as plt
 import numpy as np
@@ -13,7 +14,7 @@ import umap
 import umap.plot
 from tqdm import tqdm
 
-### Torch Dependencies
+# Torch Dependencies
 import torch
 import torch.multiprocessing
 import torchvision
@@ -24,11 +25,12 @@ from pl_bolts.utils.semi_supervised import Identity
 device = torch.device('cuda:0')
 torch.multiprocessing.set_sharing_strategy('file_system')
 
-### Model Architectures
+# Model Architectures
 from nn_encoder_arch.vision_transformer import vit_small
 from nn_encoder_arch.resnet_trunc import resnet50_trunc_baseline
 
 
+### Helper Functions for Normalization + Loading in pytorch_lightning SSL encoder (for SimCLR)
 def eval_transforms(pretrained=False):
     if pretrained:
         mean, std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
@@ -43,7 +45,7 @@ def torchvision_ssl_encoder(name: str, pretrained: bool = False, return_all_feat
     pretrained_model.fc = Identity()
     return pretrained_model
 
-
+### Wrapper Classes for loading in patch datasets for BreastPathQ + BCSS (CRC100K uses the ImageFolder Dataset Class)
 class CSVDataset_BreastPathQ(Dataset):    
     def __init__(self, dataroot, csv_path, transforms_eval=eval_transforms()):
         self.csv = pd.read_csv(csv_path)
@@ -71,7 +73,7 @@ class CSVDataset_BCSS(Dataset):
     def __len__(self):
         return self.csv.shape[0]
 
-
+### Functions for Loading + Saving + Visualizing Patch Embeddings
 def save_embeddings(model, fname, dataloader, dataset=None, is_imagefolder=False, 
                     save_patches=False, sprite_dim=128, overwrite=False):
 
@@ -123,10 +125,10 @@ def create_UMAP(library_path, enc_name, dataset, n=50, d=0.2):
 def create_embeddings(embeddings_dir, enc_name, dataset, save_patches=False, sprite_dim=128, 
                       patch_datasets='path/to/patch/datasets', assets_dir ='./ckpts/',
                       disentangle=-1, stage=-1):
+    print("Extracting Features for '%s' via '%s'" % (dataset, enc_name))
     if enc_name == 'resnet50_trunc':
         model = resnet50_trunc_baseline(pretrained=True)
         eval_t = eval_transforms(pretrained=True)
-        print("Loading ResNet50 (Truncated)")
     elif 'dino' in enc_name:
         ckpt_path = os.path.join(assets_dir, enc_name+'.pt')
         assert os.path.isfile(ckpt_path)
@@ -135,17 +137,17 @@ def create_embeddings(embeddings_dir, enc_name, dataset, save_patches=False, spr
         state_dict = {k.replace("module.", ""): v for k, v in state_dict.items()}
         state_dict = {k.replace("backbone.", ""): v for k, v in state_dict.items()}
         missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
-        print(missing_keys, unexpected_keys)
+        #print("Missing Keys:", missing_keys)
+        #print("Unexpected Keys:", unexpected_keys)
         eval_t = eval_transforms(pretrained=False)
-        print("Loading DINO")
     elif 'simclr' in enc_name:
         ckpt_path = os.path.join(assets_dir, enc_name+'.pt')
         assert os.path.isfile(ckpt_path)
         model = torchvision_ssl_encoder('resnet50', pretrained=True)
         missing_keys, unexpected_keys = model.load_state_dict(torch.load(ckpt_path), strict=False)
-        print(missing_keys, unexpected_keys)
+        #print("Missing Keys:", missing_keys)
+        #print("Unexpected Keys:", unexpected_keys)
         eval_t = eval_transforms(pretrained=False)
-        print("Loading SimCLR")
     else:
         pass
 
@@ -167,12 +169,12 @@ def create_embeddings(embeddings_dir, enc_name, dataset, save_patches=False, spr
     else:
         _stage = ''
     
-    if dataset == 'kather100k':
+    if dataset == 'crc100k':
         ### Train
         dataroot = os.path.join(patch_datasets, 'NCT-CRC-HE-100K/')
         dataset = torchvision.datasets.ImageFolder(dataroot, transform=eval_t)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=10, shuffle=False, num_workers=4)
-        fname = os.path.join(embeddings_dir, 'kather100k_train_%s%s' % (enc_name, _stage))
+        fname = os.path.join(embeddings_dir, 'crc100k_train_%s%s' % (enc_name, _stage))
         save_embeddings(model=model, fname=fname, dataloader=dataloader, dataset=dataset,
                         save_patches=save_patches, sprite_dim=sprite_dim, is_imagefolder=True)
         
@@ -180,16 +182,16 @@ def create_embeddings(embeddings_dir, enc_name, dataset, save_patches=False, spr
         dataroot = os.path.join(patch_datasets, 'CRC-VAL-HE-7K/')
         dataset = torchvision.datasets.ImageFolder(dataroot, transform=eval_t)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False, num_workers=4)
-        fname = os.path.join(embeddings_dir, 'kather100k_val_%s%s' % (enc_name, _stage))
+        fname = os.path.join(embeddings_dir, 'crc100k_val_%s%s' % (enc_name, _stage))
         save_embeddings(model=model, fname=fname, dataloader=dataloader, dataset=dataset,
                         save_patches=save_patches, sprite_dim=sprite_dim, is_imagefolder=True)
 
-    elif dataset == 'kather100knonorm':
+    elif dataset == 'crc100knonorm':
         ### Train
         dataroot = os.path.join(patch_datasets, 'NCT-CRC-HE-100K-NONORM/')
         dataset = torchvision.datasets.ImageFolder(dataroot, transform=eval_t)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=10, shuffle=False, num_workers=4)
-        fname = os.path.join(embeddings_dir, 'kather100knonorm_train_%s%s' % (enc_name, _stage))
+        fname = os.path.join(embeddings_dir, 'crc100knonorm_train_%s%s' % (enc_name, _stage))
         save_embeddings(model=model, fname=fname, dataloader=dataloader, dataset=dataset,
                         save_patches=save_patches, sprite_dim=sprite_dim, is_imagefolder=True)
         
@@ -197,7 +199,7 @@ def create_embeddings(embeddings_dir, enc_name, dataset, save_patches=False, spr
         dataroot = os.path.join(patch_datasets, 'CRC-VAL-HE-7K/')
         dataset = torchvision.datasets.ImageFolder(dataroot, transform=eval_t)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False, num_workers=4)
-        fname = os.path.join(embeddings_dir, 'kather100knonorm_val_%s%s' % (enc_name, _stage))
+        fname = os.path.join(embeddings_dir, 'crc100knonorm_val_%s%s' % (enc_name, _stage))
         save_embeddings(model=model, fname=fname, dataloader=dataloader, dataset=dataset,
                         save_patches=save_patches, sprite_dim=sprite_dim, is_imagefolder=True)
 
