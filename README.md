@@ -17,7 +17,11 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 ```
 </details>
 
-### Pretrained Models
+<div align="center">
+  <img width="80%" alt="DINO illustration" src=".github/Pathology_DINO.jpg">
+</div>
+
+## Pretrained Models
 <table>
   <tr>
     <th>Arch</th>
