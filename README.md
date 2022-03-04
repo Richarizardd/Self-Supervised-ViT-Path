@@ -28,6 +28,14 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 3. SSL helps out a lot with stain normalization. With vanilla data augmentations, global structure of morphological subtypes are more well-preserved than ImageNet features.
 4. Self-supervised ViTs are able to localize cell location quite well w/o any supervision. Our results show that ViTs are able to localize visual concepts in histopathology in introspecting the attention heads.
 
+## Updates
+Stay tuned for more updates :).
+
+- [ ] TBA: Pretrained DINO model on TCGA-PanCancer (Larger working paper, in submission).
+- [ ] TBA: Pretrained SimCLR and DINO models (Larger working paper, in submission).
+- [ ] TBA: PeP8-compliant (cleaning and organizing code).
+- [x] 03/04/2022: Reproducible and largely-working codebase that I'm satisfied with. Heavily tested.
+
 ## Pre-Reqs
 We use [Git LFS](https://git-lfs.github.com) to version-control large files in this repository (e.g. - images, embeddings, checkpoints). After installing, to pull these large files, please run:
 ```bash
