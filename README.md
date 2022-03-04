@@ -114,3 +114,4 @@ Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be trick
   year={2021}
 }
 ```
+© This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
