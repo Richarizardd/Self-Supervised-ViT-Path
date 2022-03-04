@@ -127,6 +127,10 @@ Attention visualizations (reproducing **Figure 3**) can be performed via walking
   <img width="90%" alt="Attention Visualization" src=".github/attention_visualization.png">
 </div>
 
+## Issues
+- Please open new threads or report issues directly (for urgent blockers) to richardchen@g.harvard.edu.
+- Immediate response to minor issues may not be available.
+
 ## Acknowledgements, License & Usage 
 - Part of this work was performed while at Microsoft Research. We thank the BioML group at Microsoft Research New England for their insightful feedback.
 - This work is still under submission in a formal proceeding. Still, if you found  our work useful in your research, please consider citing our paper at:
