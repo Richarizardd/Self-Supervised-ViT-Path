@@ -87,7 +87,7 @@ SIMCLR and DINO models were trained for 100 epochs using their vanilla training 
 For CRC-100K and BreastPathQ, pre-extracted embeddings are already available and processed in [./embeddings_patch_library](https://github.com/Richarizardd/Self-Supervised-ViT-Path/tree/master/embeddings_patch_library). See [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction_utils.py) on how these patch datasets were processed.
 
 ## Evaluation: Patch-Level Classification on CRC-100K + BreastPathQ
-Run the notebook [patch_extraction.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction.ipynb), followed by [patch_evaluation.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_evaluation.ipynb).
+Run the notebook [patch_extraction.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction.ipynb), followed by [patch_evaluation.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_evaluation.ipynb). The evaluation notebook should run "out-of-the-box" with Git LFS.
 
 ## Evaluation: Slide-Level Classification on TCGA-BRCA (IDC versus ILC)
 Install the [CLAM Package](https://github.com/mahmoodlab/CLAM), followed by using the [10-fold cross-validation splits](https://github.com/Richarizardd/Self-Supervised-ViT-Path/tree/master/slide_evaluation/splits/10foldcv_subtype/tcga_brca) made available in ```./slide_evaluation/10foldcv_subtype/tcga_brca```. Tensorboard train + validation logs can visualized via:
