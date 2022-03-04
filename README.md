@@ -100,8 +100,11 @@ tensorboard --logdir ./slide_evaluation/results/
 Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be tricky to install if you have incompatible dependencies), followed by using the following code snippet in [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/aab950a98118f45536a44ee599720ba4ae691524/patch_extraction_utils.py#L111).
 
 ## Visualization: Attention Maps
-(Coming Soon)
+Attention visualizations (reproducing Figure 3) can be performed via walking through the following notebook at [attention_visualization_256.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/attention_visualization_256.ipynb).
 
+<div align="center">
+  <img width="80%" alt="DINO illustration" src=".github/attention_demo.jpg">
+</div>
 
 ## Acknowledgements, License & Usage 
 - Part of this work was performed while at Microsoft Research. We thank the BioML group at Microsoft Research New England for their insightful feedback.
