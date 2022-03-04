@@ -89,12 +89,20 @@ For CRC-100K and BreastPathQ, pre-extracted embeddings are already available and
 ## Evaluation: Patch-Level Classification on CRC-100K + BreastPathQ
 Run the notebook [patch_extraction.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction.ipynb), followed by [patch_evaluation.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_evaluation.ipynb). The evaluation notebook should run "out-of-the-box" with Git LFS.
 
+<div align="center">
+  <img width="80%" alt="table2" src=".github/table2.jpg">
+</div>
+
 ## Evaluation: Slide-Level Classification on TCGA-BRCA (IDC versus ILC)
 Install the [CLAM Package](https://github.com/mahmoodlab/CLAM), followed by using the [10-fold cross-validation splits](https://github.com/Richarizardd/Self-Supervised-ViT-Path/tree/master/slide_evaluation/splits/10foldcv_subtype/tcga_brca) made available in ```./slide_evaluation/10foldcv_subtype/tcga_brca```. Tensorboard train + validation logs can visualized via:
 
 ```bash
 tensorboard --logdir ./slide_evaluation/results/
 ```
+
+<div align="center">
+  <img width="80%" alt="table1" src=".github/table1.jpg">
+</div>
 
 ## Visualization: Creating UMAPs
 Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be tricky to install if you have incompatible dependencies), followed by using the following code snippet in [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/aab950a98118f45536a44ee599720ba4ae691524/patch_extraction_utils.py#L111), and is used in [patch_extraction.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction.ipynb) to create **Figure 4**.
