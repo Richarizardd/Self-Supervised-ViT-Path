@@ -34,7 +34,7 @@ Stay tuned for more updates :).
 - [ ] TBA: Pretrained DINO model on TCGA-PanCancer (Larger working paper, in submission).
 - [ ] TBA: Pretrained SimCLR and DINO models (Larger working paper, in submission).
 - [ ] TBA: PEP8-compliance (cleaning and organizing code).
-- [x] 03/04/2022: Reproducible and largely-working codebase that I'm satisfied with. Heavily tested.
+- [x] 03/04/2022: Reproducible and largely-working codebase that I'm satisfied with and have heavily tested.
 
 ## Pre-Reqs
 We use [Git LFS](https://git-lfs.github.com) to version-control large files in this repository (e.g. - images, embeddings, checkpoints). After installing, to pull these large files, please run:
