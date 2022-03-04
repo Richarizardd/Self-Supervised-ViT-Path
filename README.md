@@ -33,7 +33,7 @@ Stay tuned for more updates :).
 
 - [ ] TBA: Pretrained DINO model on TCGA-PanCancer (Larger working paper, in submission).
 - [ ] TBA: Pretrained SimCLR and DINO models (Larger working paper, in submission).
-- [ ] TBA: PeP8-compliant (cleaning and organizing code).
+- [ ] TBA: PEP8-compliance (cleaning and organizing code).
 - [x] 03/04/2022: Reproducible and largely-working codebase that I'm satisfied with. Heavily tested.
 
 ## Pre-Reqs
