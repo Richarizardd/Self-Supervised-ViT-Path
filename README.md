@@ -25,7 +25,8 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 **Summary / Main Findings:**
 1. In head-to-head comparison of SimCLR versus DINO, DINO learns more effective pretrained representations for histopathology - likely due to 1) not needing negative samples (histopathology has lots of potential class imbalance, 2) capturing better inductive biases about the part-whole hierarchies of how cells are spatially organized in tissue.
 2. ImageNet features do lag behind SSL methods (in terms of data-efficiency), but are better than you think on patch/slide-level tasks. I have been using the ImageNet features (from a truncated ResNet-50 after 3rd residual block), and has given me very decent performance in our [CLAM package](https://github.com/mahmoodlab/CLAM).
-3. Self-supervised ViTs are able to localize cell location quite well w/o any supervision. Our results show that ViTs are able to localize visual concepts in histopathology in introspecting the attention heads.
+3. SSL helps out a lot with stain normalization. With vanilla data augmentations, global structure of morphological subtypes are more well-preserved than ImageNet features.
+4. Self-supervised ViTs are able to localize cell location quite well w/o any supervision. Our results show that ViTs are able to localize visual concepts in histopathology in introspecting the attention heads.
 
 ## Pre-Reqs
 We use [Git LFS](https://git-lfs.github.com) to version-control large files in this repository (e.g. - images, embeddings, checkpoints). After installing, to pull these large files, please run:
