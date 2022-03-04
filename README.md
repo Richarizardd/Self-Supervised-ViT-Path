@@ -103,8 +103,9 @@ Install [umap-learn](https://umap-learn.readthedocs.io/en/latest/) (can be trick
 (Coming Soon)
 
 
-## License & Usage 
-This work is still under submission in a formal proceeding. Still, if you found  our work useful in your research, please consider citing our paper at:
+## Acknowledgements, License & Usage 
+- Part of this work was performed while at Microsoft Research. We thank the BioML group at Microsoft Research New England for their insightful feedback.
+- This work is still under submission in a formal proceeding. Still, if you found  our work useful in your research, please consider citing our paper at:
 ```bash
 @article{chen2022self,
   title={Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology},
@@ -113,5 +114,6 @@ This work is still under submission in a formal proceeding. Still, if you found 
   year={2021}
 }
 ```
+
 
 © This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
