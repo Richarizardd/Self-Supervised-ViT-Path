@@ -56,7 +56,7 @@ SIMCLR and DINO models were trained for 100 epochs using their vanilla training 
   </tr>
   
   <tr>
-    <td>ResNet-50 (Trunc)</td>
+    <td>ResNet-50</td>
     <td>Transfer</td>
     <td>ImageNet</td>
     <td>N/A</td>
