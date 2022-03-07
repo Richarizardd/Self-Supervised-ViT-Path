@@ -30,9 +30,8 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 
 ## Updates
 Stay tuned for more updates :).
-
-- [ ] TBA: Pretrained DINO model on TCGA-PanCancer (Larger working paper, in submission).
-- [ ] TBA: Pretrained SimCLR and DINO models (Larger working paper, in submission).
+- [ ] TBA: Pretrained SimCLR and DINO models on TCGA-Lung (Larger working paper, in submission).
+- [ ] TBA: Pretrained SimCLR and DINO models on TCGA-PanCancer (Larger working paper, in submission).
 - [ ] TBA: PEP8-compliance (cleaning and organizing code).
 - [x] 03/04/2022: Reproducible and largely-working codebase that I'm satisfied with and have heavily tested.
 
