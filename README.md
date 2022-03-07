@@ -96,7 +96,7 @@ For CRC-100K and BreastPathQ, pre-extracted embeddings are already available and
 This codebase is flexible for feature extraction on a variety of different patch datasets. To extend this work, simply modify [patch_extraction_utils.py](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction_utils.py) with a custom Dataset Loader for your dataset. As an example, we include BCSS (results not yet updated in this work).
 - BCSS (v1): You can download the BCSS dataset from the [official Grand Challenge link](https://bcsegmentation.grand-challenge.org). For this dataset, we manually developed the train and test dataset splits and labels using majority-voting. Reproducibility for the raw BCSS dataset may be not exact, but we include the pre-extracted embeddings of this dataset in [./embeddings_patch_library](https://github.com/Richarizardd/Self-Supervised-ViT-Path/tree/master/embeddings_patch_library) (denoted as version 1).
 
-## Evaluation: Patch-Level Classification on CRC-100K + BreastPathQ
+## Evaluation: K-NN Patch-Level Classification on CRC-100K + BreastPathQ
 Run the notebook [patch_extraction.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_extraction.ipynb), followed by [patch_evaluation.ipynb](https://github.com/Richarizardd/Self-Supervised-ViT-Path/blob/master/patch_evaluation.ipynb). The evaluation notebook should run "out-of-the-box" with Git LFS.
 
 <div align="center">
