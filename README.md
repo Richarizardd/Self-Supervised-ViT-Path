@@ -43,6 +43,9 @@ git lfs pull
 
 ## Pretrained Models
 SIMCLR and DINO models were trained for 100 epochs using their vanilla training recipes in their respective papers. These models were developed on 2,055,742 patches (```256 x 256``` resolution at ```20X``` magnification) extracted from diagnostic slides in the TCGA-BRCA dataset, and evaluated via K-NN on patch-level datasets in histopathology.
+
+**Note**: Results should be taken-in w.r.t. to the size of dataset and duraration of training epochs. Ideally, longer training with larger batch sizes would demonstrate larger gains in SSL performance.
+
 <table>
   <tr>
     <th>Arch</th>
