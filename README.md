@@ -29,10 +29,7 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 4. Self-supervised ViTs are able to localize cell location quite well w/o any supervision. Our results show that ViTs are able to localize visual concepts in histopathology in introspecting the attention heads.
 
 ## Updates
-Stay tuned for more updates :).
-- [ ] TBA: Pretrained SimCLR and DINO models on TCGA-Lung (Larger working paper, in submission).
-- [ ] TBA: Pretrained SimCLR and DINO models on TCGA-PanCancer (Larger working paper, in submission).
-- [ ] TBA: PEP8-compliance (cleaning and organizing code).
+- [x] 06/06/2022: Please see our [follow-up work in CVPR 2022](https://github.com/mahmoodlab/HIPT), which further extends this repository.
 - [x] 03/04/2022: Reproducible and largely-working codebase that I'm satisfied with and have heavily tested.
 
 ## Pre-Reqs
