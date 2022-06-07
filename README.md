@@ -138,13 +138,20 @@ Attention visualizations (reproducing **Figure 3**) can be performed via walking
 
 ## Acknowledgements, License & Usage 
 - Part of this work was performed while at Microsoft Research. We thank the BioML group at Microsoft Research New England for their insightful feedback.
-- This work is still under submission in a formal proceeding. Still, if you found  our work useful in your research, please consider citing our paper at:
+- If found our work useful in your research, please consider citing our work(s) at:
 ```bash
 @article{chen2022self,
   title={Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology},
   author={Chen, Richard J and Krishnan, Rahul G},
   journal={Learning Meaningful Representations of Life, NeurIPS 2021},
   year={2021}
+}
+
+@inproceedings{chen2022scaling,
+  title={Scaling Vision Transformers to Gigapixel Images via Hierarchical Self-Supervised Learning},
+  author={Chen, Richard J and Chen, Chengkuan and Li, Yicong and Chen, Tiffany Y and Trister, Andrew D and Krishnan, Rahul G and Mahmood, Faisal},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2022}
 }
 ```
 © This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
