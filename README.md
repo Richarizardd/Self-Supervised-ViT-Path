@@ -1,6 +1,6 @@
 Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 ===========
-**[06-06-2022] Update: Please see our [follow-up work in CVPR 2022](https://github.com/mahmoodlab/HIPT), which further extends this repository.**
+**NOTE: Please see our [follow-up work in CVPR 2022](https://github.com/mahmoodlab/HIPT), which further extends this repository.**
 
 <details>
 <summary>
