@@ -1,5 +1,7 @@
 Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 ===========
+**[06-06-2022] Update: Please see our [follow-up work in CVPR 2022](https://github.com/mahmoodlab/HIPT), which further extends this repository.**
+
 <details>
 <summary>
   <b>Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology</b>, LMRL Workshop, NeurIPS 2021.
@@ -17,6 +19,7 @@ Self-Supervised Vision Transformers Learn Visual Concepts in Histopathology
 }
 ```
 </details>
+
 
 <div align="center">
   <img width="80%" alt="DINO illustration" src=".github/Pathology_DINO.jpg">
